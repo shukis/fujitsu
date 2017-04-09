@@ -129,10 +129,9 @@ public abstract class Film {
 
 
     public static String getFilmType(Film film){
-        String clazz = film.getClass().toString().substring(film.getClass().toString().lastIndexOf('.')+1);
-        if(clazz.equals("NewRelease")) return "New release";
-        else if(clazz.equals("RegularFilm")) return "Regular film";
-        else if(clazz.equals("OldFilm")) return "Old film";
+        if(film instanceof NewRelease) return "New release";
+        else if(film instanceof RegularFilm) return "Regular film";
+        else if(film instanceof OldFilm) return "Old film";
         return null;
     }
 
